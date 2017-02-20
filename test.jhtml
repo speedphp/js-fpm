@@ -1,0 +1,8 @@
+
+<b>Hello world</b>
+<?js
+da.write("hello inser");
+
+?>
+
+<b>end</b>

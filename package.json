@@ -1,0 +1,11 @@
+{
+  "name": "js-fpm",
+  "version": "0.0.2",
+  "description": "A FastCGI Process Manager for NodeJS.",
+  "main": "fpm.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "zhenzhong",
+  "license": "ISC"
+}
