@@ -1,5 +1,4 @@
 const fs = require('fs');
-var argv = require('optimist').argv;
 var http=require('http');  
 var server=new http.Server(); 
 
@@ -48,6 +47,6 @@ server.on('request',function(req, res){
     });
 });  
 
-server.listen(argv.port);  
+server.listen(process.env.PORT);  
 console.log('HTTP SERVER is LISTENING AT PORT '+argv.port);  
 
