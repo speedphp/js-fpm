@@ -1,4 +1,5 @@
 const fs = require('fs');
+var argv = require('optimist').argv;
 var http=require('http');  
 var server=new http.Server(); 
 
@@ -29,11 +30,11 @@ server.on('request',function(req, res){
             var start_tag = new RegExp("<\\?js","igm");
             var end_tag = new RegExp("\\?>","igm");
             
-            var cookie = require("./lib/in.js");
+            //var cookie = require("./lib/in.js");
             
-            cookie.set("hello", "world");
+            //cookie.set("hello", "world");
             
-            console.log(cookie.get("hello"))
+            //console.log(cookie.get("hello"))
             
             tpl = tpl.replace(start_tag, "`);");
             tpl = tpl.replace(end_tag, "da.write(`");
@@ -47,6 +48,6 @@ server.on('request',function(req, res){
     });
 });  
 
-server.listen(3000);  
-console.log('HTTP SERVER is LISTENING AT PORT 3000.');  
+server.listen(argv.port);  
+console.log('HTTP SERVER is LISTENING AT PORT '+argv.port);  
 
