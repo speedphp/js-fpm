@@ -13,6 +13,10 @@ d.prototype.write = function(str){
 d.prototype.join = function (pattern) {
     return this.response.join(pattern)
 }
+function include(path){
+    var file = fs.realpathSync(path);
+    return fs.readFileSync(file, { encoding: 'utf8', flag: 'r' });
+}
 
 server.on('request',function(req, res){  
     res.writeHead(200,{'Content-Type':'text/html'});  
