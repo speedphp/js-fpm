@@ -2,6 +2,9 @@
 
 ## TODO LIST
 
+node-fastcgi
+fastcgi-stream
+
 - 服务存在文件的输出
 - include包含文件如何处理？
 - jhtml文件的支持优化
