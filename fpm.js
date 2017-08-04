@@ -1,18 +1,28 @@
+var fcgi = require('node-fastcgi');
+const child_process = require('child_process');
 const fs = require('fs');
-var http=require('http');
-var server=new http.Server();
-
-server.on('request',function(req, res){
-    res.writeHead(200,{'Content-Type':'text/html'});
-    console.log(req.url);
-    (function(res){
-        fs.readFile("./main.js", function(err, data){
-            eval(data)
-            res.end();
-        });
-    })(res);
-
-}).listen(3000);
-
+const cluster = require('cluster');
+const numCPUs = require('os').cpus().length;
+if (cluster.isMaster) {
+    for (var i = 0; i < numCPUs; i++) {
+        cluster.fork();
+    }
+} else {
+    fcgi.createServer(function (request, response) {
+        if (request.method === 'GET') {
+            fs.readFile("./main.js", function(err, data){
+                var cookie = require("./lib/cookie.js")
+                cookie.load(response, request.headers.cookie || '')
+                var session = require("./lib/session.js")
+                session.load(request, cookie)
+                eval(data.toString())
+                response.end();
+            });
+        } else {
+            response.writeHead(501);
+            response.end();
+        }
+    }).listen(3000);
+}
 
 
