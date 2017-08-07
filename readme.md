@@ -1,48 +1,37 @@
 # A FastCGI Process Manager for NodeJS
 
-## TODO LIST
+## How to install
 
-node-fastcgi
-fastcgi-stream
+```
+npm install js-fpm
+```
 
-- 服务存在文件的输出
-- include包含文件如何处理？
-- jhtml文件的支持优化
-- webapps配置支持
-- 测试浏览型小网站
-- cookie、session
-- header
-- sqlite
-- in.post，get，upload，query
-- out.write，end，redirect
-- util.html_escape，file_get，file_put
-- 文档
-- demo
-- 发布
+## How to use
 
-## Architecture
+This package support the fastcgi mode, so you may config a nginx serve to access fastcgi mode to this.
 
-cookie
+nginx configuration(in server)
 
-session
+```
+	location / {
+		root html;
+		index index.html index.htm;
+		try_files $uri $uri/ @node;
+	}
 
-header
+	location @node {
+		fastcgi_pass 127.0.0.1:3000;
+		fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;
+		include        fastcgi_params;
+	}
+```
 
-sqlite
+## Feature
 
-in
-- post
-- get
-- upload
-- query
-	
-out
-- write
-- end
-- redirect
+fastcgi mode to serve the script(main.js)
 
-util
-- html_escape
-- file_get
-- file_put
-	
+session and cookie
+
+file upload
+
+etc
