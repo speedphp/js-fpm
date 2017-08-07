@@ -29,7 +29,8 @@ nginx configuration(in server)
 next to start by cmd:
 
 ```
-node fpm.js
+var fpm = require("./fpm")
+fpm.run();
 ```
 
 so, you may write so script in main.js.
@@ -42,4 +43,29 @@ session and cookie
 
 file upload
 
-etc
+etc...
+
+## Configuration
+
+```
+var fpm = require("./fpm")
+var options = {
+    "mode" : "fastcgi", // or "http"
+    "port" : "3000", // or "80"
+    "ip" : "localhost", // or IP
+    "main" : require("path").resolve("./main.js")
+}
+fpm.run(options);
+```
+
+### options.mode
+fastcgi or http
+fastcgi support the fastcgi protocol.
+http support the standard http protocol
+
+### options.port options.ip 
+port and ip
+
+### options.main
+the execute file path
+

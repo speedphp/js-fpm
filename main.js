@@ -1,9 +1,2 @@
-
-response.write(
-    '<form action="/upload" enctype="multipart/form-data" method="post">'+
-    '<input type="text" name="title"><br>'+
-    '<input type="file" name="upload1" multiple="multiple"><br>'+
-    '<input type="file" name="upload2" multiple="multiple"><br>'+
-    '<input type="submit" value="Upload">'+
-    '</form>'
-);
+response.writeHead("200", {'Content-Type': 'text/html'})
+response.write("<h2>Welcome to js-fpm</h2>");
