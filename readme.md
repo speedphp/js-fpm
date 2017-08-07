@@ -26,6 +26,14 @@ nginx configuration(in server)
 	}
 ```
 
+next to start by cmd:
+
+```
+node fpm.js
+```
+
+so, you may write so script in main.js.
+
 ## Feature
 
 fastcgi mode to serve the script(main.js)
