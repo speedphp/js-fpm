@@ -26,10 +26,10 @@ nginx configuration(in server)
 	}
 ```
 
-next to start by cmd:
+next to start:
 
 ```
-var fpm = require("./fpm")
+var fpm = require("js-fpm")
 fpm.run();
 ```
 
@@ -48,7 +48,7 @@ etc...
 ## Configuration
 
 ```
-var fpm = require("./fpm")
+var fpm = require("js-fpm")
 var options = {
     "mode" : "fastcgi", // or "http"
     "port" : "3000", // or "80"

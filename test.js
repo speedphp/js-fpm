@@ -1,4 +1,4 @@
-var fpm = require("./fpm")
+var fpm = require("js-fpm")
 var options = {
     "mode" : "fastcgi", // or "http"
     "port" : "3000", // or "80"

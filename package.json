@@ -1,11 +1,11 @@
 {
   "name": "js-fpm",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "description": "A FastCGI Process Manager for NodeJS.",
   "main": "fpm.js",
   "repository": {
     "type": "git",
-    "url": "https://zhenzhong@bitbucket.org/zhenzhong/js-fpm.git"
+    "url": "https://bitbucket.org/zhenzhong/js-fpm.git"
   },
   "scripts": {
     "test": "node test.js"
