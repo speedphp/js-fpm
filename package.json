@@ -1,6 +1,6 @@
 {
   "name": "js-fpm",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "A FastCGI Process Manager for NodeJS.",
   "main": "fpm.js",
   "repository": {
