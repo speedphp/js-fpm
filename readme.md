@@ -16,7 +16,7 @@ nginx configuration(in server)
 	location / {
 		root html;
 		index index.html index.htm;
-		try_files $uri $uri/ @node;
+		try_files $uri @node;
 	}
 
 	location @node {
