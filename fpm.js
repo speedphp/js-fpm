@@ -67,7 +67,7 @@ exports.run = function (opt) {
                     $post = results["formdata"][0]
                     $files = results["formdata"][1]
                     eval(data.toString())
-                    response.end();
+                    //response.end();
                 });
             });
         }
