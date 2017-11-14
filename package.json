@@ -1,6 +1,6 @@
 {
   "name": "js-fpm",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "A FastCGI Process Manager for NodeJS.",
   "main": "fpm.js",
   "repository": {
@@ -10,6 +10,7 @@
   "scripts": {
     "test": "node test.js"
   },
+  "keywords": ["http", "fastcgi", "phpfpm", "proxy", "nodefpm"],
   "author": "zhenzhong",
   "license": "ISC",
   "dependencies": {
